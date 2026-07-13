@@ -1,5 +1,11 @@
 /* ===== RENDER DYNAMIC SECTIONS FROM data.js ===== */
 
+// Security: Escape HTML entities to prevent XSS when injecting text via innerHTML
+function escapeHTML(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
+
 function getInitials(name) {
   return name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
 }
@@ -9,7 +15,7 @@ function avatarHTML(name, image, size) {
   const sizeMap = { lg: 'avatar avatar-lg', md: 'avatar avatar-md', sm: 'avatar' };
   const cls = sizeMap[size] || 'avatar';
   if (image) {
-    return `<div class="${cls} avatar-img"><img src="images/team/${image}" alt="${name}" loading="lazy"></div>`;
+    return `<div class="${cls} avatar-img"><img src="images/team/${image}" alt="${escapeHTML(name)}" loading="lazy"></div>`;
   }
   const initials = getInitials(name);
   return `<div class="${cls}"><span>${initials}</span></div>`;
@@ -21,7 +27,7 @@ function renderStats() {
   el.innerHTML = SITE_DATA.stats.map(s => `
     <div class="stat" data-animate>
       <span class="stat-num" data-count="${s.count}">0</span>
-      <span class="stat-label">${s.label}</span>
+      <span class="stat-label">${escapeHTML(s.label)}</span>
     </div>
   `).join('');
 }
@@ -51,11 +57,11 @@ function renderTeams() {
           <div class="team-gen-card" data-animate style="--card-bg: url('${bg}')" data-index="${idx}">
             <div class="team-gen-card-bg"></div>
             <div class="team-gen-card-content">
-              <span class="tech-tag">${team.year}</span>
-              <h3>${team.name}</h3>
+              <span class="tech-tag">${escapeHTML(team.year)}</span>
+              <h3>${escapeHTML(team.name)}</h3>
               <p class="team-leader-preview">
-                Captain: ${team.captain.name}
-                ${team.viceCaptain ? `<br>Vice Captain: ${team.viceCaptain.name}` : ''}
+                Captain: ${escapeHTML(team.captain.name)}
+                ${team.viceCaptain ? `<br>Vice Captain: ${escapeHTML(team.viceCaptain.name)}` : ''}
               </p>
               <div class="team-card-action">
                 <span>View Crew Details</span>
@@ -113,7 +119,7 @@ function openTeamModal(teamIndex) {
       <div class="captain-card-bg"></div>
       <div class="captain-card-content">
         ${avatarHTML(team.viceCaptain.name, team.viceCaptain.image, 'lg')}
-        <h4>${team.viceCaptain.name}</h4>
+        <h4>${escapeHTML(team.viceCaptain.name)}</h4>
         <span class="role-badge">VICE CAPTAIN</span>
       </div>
     </div>` : '';
@@ -124,7 +130,7 @@ function openTeamModal(teamIndex) {
         <div class="captain-card-bg"></div>
         <div class="captain-card-content">
           ${avatarHTML(team.captain.name, team.captain.image, 'lg')}
-          <h4>${team.captain.name}</h4>
+          <h4>${escapeHTML(team.captain.name)}</h4>
           <span class="role-badge">CAPTAIN</span>
         </div>
       </div>
@@ -146,8 +152,8 @@ function openTeamModal(teamIndex) {
           <div class="tm-hod-item">
             ${avatarHTML(h.name, h.image, 'sm')}
             <div class="tm-hod-item-info">
-              <h5>${h.name}</h5>
-              <span>${h.dept}</span>
+              <h5>${escapeHTML(h.name)}</h5>
+              <span>${escapeHTML(h.dept)}</span>
             </div>
           </div>
         `).join('')}
@@ -161,7 +167,7 @@ function openTeamModal(teamIndex) {
         ${sub.members.map(m => `
           <div class="tm-sub-member">
             ${avatarHTML(m.name, m.image, 'sm')}
-            <span>${m.name}</span>
+            <span>${escapeHTML(m.name)}</span>
           </div>
         `).join('')}
       </div>
@@ -169,7 +175,7 @@ function openTeamModal(teamIndex) {
 
     return `
       <div class="tm-subsystem-box">
-        <h4>${sub.name}</h4>
+        <h4>${escapeHTML(sub.name)}</h4>
         ${membersHTML}
       </div>
     `;
@@ -183,7 +189,7 @@ function openTeamModal(teamIndex) {
   `;
 
   contentEl.innerHTML = `
-    <h2 class="tm-title">${team.name} <span class="green">${team.year}</span></h2>
+    <h2 class="tm-title">${escapeHTML(team.name)} <span class="green">${escapeHTML(team.year)}</span></h2>
     ${captainHTML}
     ${departmentsHTML}
   `;
@@ -209,9 +215,9 @@ function renderAchievements() {
         <div class="timeline-card" style="--card-bg: url('${bg}')">
           <div class="timeline-card-bg"></div>
           <div class="timeline-card-content">
-            <span class="timeline-year">${a.year}</span>
-            <h3>${a.title}</h3>
-            <ul>${a.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+            <span class="timeline-year">${escapeHTML(a.year)}</span>
+            <h3>${escapeHTML(a.title)}</h3>
+            <ul>${a.highlights.map(h => `<li>${escapeHTML(h)}</li>`).join('')}</ul>
           </div>
         </div>
       </div>
@@ -234,7 +240,7 @@ function renderGallery() {
           </video>
           <div class="gallery-play-btn">▶</div>`;
       } else {
-        inner = `<img class="gallery-media" src="images/gallery/${item.src}" alt="${item.caption}" loading="lazy">`;
+        inner = `<img class="gallery-media" src="images/gallery/${item.src}" alt="${escapeHTML(item.caption)}" loading="lazy">`;
       }
     } else {
       // Placeholder when no image is set
@@ -244,7 +250,7 @@ function renderGallery() {
     return `
       <div class="gallery-item ${sizeClass}" data-type="${item.type}" data-src="${item.src || ''}" title="${item.caption || ''}">
         ${inner}
-        <div class="gallery-overlay"><p>${item.caption}</p></div>
+        <div class="gallery-overlay"><p>${escapeHTML(item.caption || '')}</p></div>
       </div>
     `;
   }).join('');
@@ -272,10 +278,7 @@ function createLightbox() {
     <div class="lb-content-container">
       <div class="lb-content">
         <img class="lb-img" src="" alt="" style="display: none;">
-        <video class="lb-video" controls playsinline style="display: none;">
-          <source src="" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <video class="lb-video" controls playsinline style="display: none;"></video>
       </div>
       <p class="lb-caption"></p>
     </div>
@@ -286,7 +289,9 @@ function createLightbox() {
     const video = lb.querySelector('.lb-video');
     if (video) {
       video.pause();
-      video.src = ""; // Stop buffering and reset source
+      video.removeAttribute('src');
+      video.removeAttribute('autoplay');
+      video.load(); // Reset the video element cleanly
     }
     lb.classList.remove('open');
   };
@@ -309,22 +314,23 @@ function openLightbox(type, src, caption) {
 
   if (type === 'video') {
     img.style.display = 'none';
-    img.src = '';
+    img.removeAttribute('src');
 
     video.style.display = 'block';
+    video.setAttribute('autoplay', '');
     video.src = `images/gallery/${src}`;
-    video.load();
     
-    // Play unmuted since this was initiated by a direct user click gesture
+    // Play immediately under the user gesture context to avoid browser autoplay blocks
     const playPromise = video.play();
     if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.log("Autoplay unmuted blocked by browser policy, fallback to manual click-to-play:", error);
+      playPromise.catch((error) => {
+        console.warn("Direct video play failed or was blocked:", error);
       });
     }
   } else {
+    video.pause();
+    video.removeAttribute('src');
     video.style.display = 'none';
-    video.src = '';
 
     img.style.display = 'block';
     img.src = `images/gallery/${src}`;
@@ -340,10 +346,10 @@ function renderSponsors() {
   container.innerHTML = SITE_DATA.sponsors.map(s => `
     <div class="sponsor-card">
       ${s.logo
-        ? `<img class="sponsor-logo-img" src="images/sponsors/${s.logo}" alt="${s.name}" loading="lazy">`
-        : `<div class="sponsor-logo">${s.name}</div>`
+        ? `<img class="sponsor-logo-img" src="images/sponsors/${s.logo}" alt="${escapeHTML(s.name)}" loading="lazy">`
+        : `<div class="sponsor-logo">${escapeHTML(s.name)}</div>`
       }
-      <p>${s.description}</p>
+      <p>${escapeHTML(s.description)}</p>
     </div>
   `).join('');
 
@@ -351,7 +357,7 @@ function renderSponsors() {
   const cta = document.getElementById('sponsorCTA');
   const d = SITE_DATA.sponsorCTA;
   cta.innerHTML = `
-    <p>${d.description}</p>
+    <p>${escapeHTML(d.description)}</p>
     <a href="${d.brochureLink}" target="_blank" class="btn btn-outline">Download Brochure</a>
   `;
 }
@@ -360,11 +366,11 @@ function renderSponsors() {
 function renderContact() {
   const el = document.getElementById('contactInfo');
   const c = SITE_DATA.contact;
-  const addressHTML = c.address.replace(/\n/g, '<br>');
+  const addressHTML = escapeHTML(c.address).replace(/\n/g, '<br>');
   el.innerHTML = `
     <div class="contact-item"><span class="ci-icon">⌖</span><div><h4>Location</h4><p>${addressHTML}</p></div></div>
-    <div class="contact-item"><span class="ci-icon">✉</span><div><h4>Email</h4><p>${c.email}</p></div></div>
-    <div class="contact-item"><span class="ci-icon">☎</span><div><h4>Phone</h4><p>${c.phone}</p></div></div>
+    <div class="contact-item"><span class="ci-icon">✉</span><div><h4>Email</h4><p>${escapeHTML(c.email)}</p></div></div>
+    ${c.phone ? `<div class="contact-item"><span class="ci-icon">☎</span><div><h4>Phone</h4><p>${escapeHTML(c.phone)}</p></div></div>` : ''}
     <div class="socials">
       ${c.socials.instagram ? `<a href="${c.socials.instagram}" target="_blank" class="social-btn" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>` : ''}
       ${c.socials.twitter ? `<a href="${c.socials.twitter}" target="_blank" class="social-btn" aria-label="Twitter"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>` : ''}

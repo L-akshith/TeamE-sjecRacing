@@ -60,7 +60,7 @@ const SITE_DATA = {
           hod: "Lakshith",
           image: "Lakshith.jpg",
           members: [
-            { name: "Yashraj Shetty", image: "" },
+            { name: "Yashraj Shetty", image: "Yashraj Shetty.jpg" },
             { name: "Bhavin D S", image: "bhavin d s.jpg" },
             { name: "Ashwin", image: "Ashwin.jpg" },
           ],
@@ -135,6 +135,7 @@ const SITE_DATA = {
             { name: "Christina Fernandes", image: "Christina Fernandes.jpg" },
             { name: "Pranav R", image: "Pranav R.jpg" },
             { name: "Pratheek Moras", image: "Prateek Moras.png" },
+            { name: "Norman Dsouza", image: "Norman Dsouza.jpg" },
             { name: "Anson Rodrigues", image: "Anson.png" },
             { name: "Faustina Fernandes", image: "FMF.JPG" },
           ],
@@ -611,6 +612,7 @@ const SITE_DATA = {
     { type:"image", src: "img9.jpeg" },
     { type:"image", src: "img10.jpeg",size: "tall" },
     { type:"image", src: "img11.jpeg",size: "tall" },
+    { type:"video", src: "Screen Recording 2026-06-16 114305.mp4",size: "wide" },
     
   ],
 
@@ -638,6 +640,6 @@ const SITE_DATA = {
   // ===== SPONSOR CTA =====
   sponsorCTA: {
     description: "Team eSJEC Racing is a completely student-based organization that manufactures a fully electric all-terrain vehicle competing with teams all over India. The overall budget for building our dream vehicle is estimated to be ₹15 lakh. With your help, we expect to extend our success and finish among the top teams.",
-    brochureLink: "https://drive.google.com/file/d/1xPP_Yfj90VJWwGikbjEa6OB46NbesAfv/view?usp=sharing",
+    brochureLink: "https://drive.google.com/file/d/1HPKRePW_Pm96qKCpgU29Kw9H1J4KUh-E/view?usp=sharing",
   },
 };

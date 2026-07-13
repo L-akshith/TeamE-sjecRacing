@@ -1266,6 +1266,7 @@ img {
   object-fit: cover;
   display: block;
   transition: transform .5s, filter .4s;
+  pointer-events: none; /* Clicks pass through to parent .gallery-item for lightbox */
 }
 
 .gallery-item:hover .gallery-media {
@@ -1411,6 +1412,9 @@ img {
 .lb-video {
   background: #000;
   outline: none;
+  aspect-ratio: 16 / 9;
+  width: 90vw;
+  max-width: 960px;
 }
 
 .lb-caption {

@@ -46,8 +46,11 @@ services:
     container_name: backend_api
     expose:
       - "5000"
+    environment:
+      # Security: Set your production domain(s) here before deploying
+      - ALLOWED_ORIGINS=http://localhost,http://localhost:80
     volumes:
-      - backend-data:/usr/src/app
+      - backend-data:/usr/src/app/data
     networks:
       - app-network
 
