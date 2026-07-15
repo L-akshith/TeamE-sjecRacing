@@ -6,7 +6,7 @@
    
    images/
    ├── team/          ← Team member photos (square, min 300x300px)
-   │   ├── ramyashree.jpg
+  │   ├── ramyashree.png
    │   ├── kiran.jpg
    │   └── ...
    ├── gallery/       ← Event photos & videos
@@ -44,7 +44,7 @@ const SITE_DATA = {
   // Add the latest team at the TOP of the array.
   //
   // For member photos, add the filename from images/team/ folder:
-  //   image: "ramyashree.jpg"
+  //   image: "ramyashree.png"
   //
   // If no photo is available, leave image as null or "" — 
   // the site will show initials instead.
@@ -184,7 +184,7 @@ const SITE_DATA = {
         {
           name: "Rollcage",
           hod: "Kiran Pinto",
-          image:"Kiran Pinto.jpg",
+          image:"",
           members: [
             { name: "Vaibhava K", image: "" },
             { name: "Selvin Fernandes", image: "Selvin.jpeg" },
@@ -199,14 +199,14 @@ const SITE_DATA = {
           members: [
             { name: "Briden Springfield", image: "Briden.jpeg" },
             { name: "Christina Fernandes", image: "" },
-            { name: "Pranav R", image: "Pranav .jpg" },
+            { name: "Pranav R", image: "Pranav.jpg" },
             { name: "Pratheek Moras", image: "Prateek Moras.png" },
           ],
         },
         {
           name: "Braking",
           hod: "Juvence Lobo",
-          image:"Juvence Lobo.jpg",
+          image:"",
           members: [
             { name: "Denzil Pinto", image: "" },
           ],
@@ -221,7 +221,7 @@ const SITE_DATA = {
             { name: "Nikhil", image: "Nikhil.png" },
             { name: "Christopher", image: "" },
             { name: "Tanisha Shetty", image: "Tanisha Shetty.jpeg" },
-            { name: "Yashas", image: "Yashas.jpg" },
+            { name: "Yashas", image: "Yashas G.jpg" },
           ],
         },
         {
@@ -281,7 +281,7 @@ const SITE_DATA = {
             { name: "Cedric Fernandes", image: "" },
             { name: "Rakesh P L", image: "Rakesh P L.jpeg" },
             { name: "Dayal", image: "Dayal.jpeg" },
-            { name: "Ramyashree K T", image: "Ramyashree K T.jpg" },
+            { name: "Ramyashree K T", image: "ramyashree.png" },
           ],
         },
         {
