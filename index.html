@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team eSJEC Racing | Mean Green Machine</title>
+  <meta name="description" content="Team eSJEC Racing - St. Joseph Engineering College Mangalore. Building electric ATVs for BAJA SAE India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- Splash Intro Screen -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-ring splash-ring-1"></div>
+      <div class="splash-ring splash-ring-2"></div>
+      <div class="splash-ring splash-ring-3"></div>
+      <img src="images/Beetle.png" alt="Beetle Emblem" class="splash-logo">
+      <h2 class="splash-title">Team <span>eSJEC</span> Racing</h2>
+      <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <canvas id="particles"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="images/logo.png" alt="Team eSJEC Racing Logo" class="nav-logo-img">
+        <span>Team eSJEC Racing</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#teams">Teams</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-subtitle" data-animate>ST. JOSEPH ENGINEERING COLLEGE, MANGALORE</p>
+        <h1 data-animate>UNLEASH<br>THE<br><span class="green">GREEN</span><br>BEAST</h1>
+        <p class="hero-desc" data-animate>Engineering excellence on every terrain. India's premier electric ATV racing team.</p>
+        <div class="hero-btns" data-animate>
+          <a href="#about" class="btn btn-primary">Explore More</a>
+          <a href="#contact" class="btn btn-outline">Join The Team</a>
+        </div>
+      </div>
+      <div class="hero-visual" data-animate>
+        <div class="buggy-frame">
+          <img src="images/hero-atv.png" alt="Beetle E44 - Team eSJEC Racing ATV" class="hero-atv-img">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
+
+  <!-- Stats Bar (rendered from data.js) -->
+  <section class="stats-bar" id="statsBar"></section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="tag">WHO WE ARE</span>
+        <h2>About <span class="green">eSJEC Racing</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card" data-animate style="--card-bg: url('images/gallery/beetle 3.0 (1).JPG')">
+          <div class="about-card-bg"></div>
+          <div class="about-card-content">
+            <span class="tech-tag">SYS.01 // POWERTRAIN</span>
+            <h3>Electric Powertrain</h3>
+            <p>Pioneering electric ATV technology with custom-designed powertrains pushing the boundaries of performance and efficiency.</p>
+          </div>
+        </div>
+        <div class="about-card" data-animate style="--card-bg: url('images/gallery/Beetle - Copy 3-2.jpg')">
+          <div class="about-card-bg"></div>
+          <div class="about-card-content">
+            <span class="tech-tag">SYS.02 // FABRICATION</span>
+            <h3>Built From Scratch</h3>
+            <p>Every component engineered and fabricated by students — from roll cage design to suspension geometry and electronics.</p>
+          </div>
+        </div>
+        <div class="about-card" data-animate style="--card-bg: url('images/gallery/BT 6-1.jpg')">
+          <div class="about-card-bg"></div>
+          <div class="about-card-content">
+            <span class="tech-tag">SYS.03 // TELEMETRY</span>
+            <h3>Competition Ready</h3>
+            <p>Competing in BAJA SAE India and ATVC national championships, consistently ranking among India's top teams.</p>
+          </div>
+        </div>
+        <div class="about-card" data-animate style="--card-bg: url('images/gallery/DSC04315_2.jpg')">
+          <div class="about-card-bg"></div>
+          <div class="about-card-content">
+            <span class="tech-tag">SYS.04 // INTEGRATION</span>
+            <h3>Multidisciplinary</h3>
+            <p>Students from Mechanical, E&amp;E, ECE, and CS departments collaborating to create engineering excellence.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-text" data-animate>
+        <p>Established in <strong>March 2019</strong> under the SAEINDIA SJEC Collegiate Club, Team eSJEC Racing is a student-led initiative from <strong>St. Joseph Engineering College, Mangalore</strong>. We design, fabricate, and race electric All-Terrain Vehicles (ATVs) that compete at the national level. Our vehicle, the <span class="green"><strong>Beetle</strong></span> series, represents generations of innovation and relentless engineering pursuit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teams (rendered from data.js) -->
+  <section id="teams" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">OUR CREW</span>
+        <h2>The <span class="green">Team</span></h2>
+      </div>
+      <div id="teamsContainer"></div>
+    </div>
+  </section>
+
+  <!-- Achievements (rendered from data.js) -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="tag">ACHIEVEMENTS</span>
+        <h2>Achievements of <span class="green">Team eSJEC Racing</span></h2>
+        <p class="section-desc">As a team, we've achieved a great deal through our involvement in competitions. Here are our proud moments!</p>
+      </div>
+      <div class="timeline" id="achievementsContainer"></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section section-dark">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="tag">GALLERY</span>
+        <h2>Moments of <span class="green">Glory</span></h2>
+      </div>
+      <div class="gallery-grid" data-animate id="galleryContainer"></div>
+    </div>
+  </section>
+
+  <!-- Sponsors (rendered from data.js) -->
+  <section id="sponsors" class="section">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="tag">PARTNERS</span>
+        <h2>Our <span class="green">Sponsors</span></h2>
+        <p class="section-desc" id="sponsorDesc"></p>
+      </div>
+      <div class="sponsor-cta" id="sponsorCTA"></div>
+      <div class="sponsors-grid" id="sponsorsContainer" data-animate></div>
+    </div>
+  </section>
+
+  <!-- Contact (rendered from data.js) -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="tag">GET IN TOUCH</span>
+        <h2>Contact <span class="green">Us</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-animate id="contactInfo"></div>
+        <form class="contact-form" data-animate id="contactForm">
+          <div class="form-group"><label for="name">Name</label><input type="text" id="name" placeholder="Your Name" required></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="your@email.com" required></div>
+          <div class="form-group"><label for="message">Message</label><textarea id="message" rows="5" placeholder="Your message..." required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Team eSJEC Racing" class="footer-logo-img">
+        <span>Team eSJEC Racing</span>
+      </div>
+      <p>&copy; 2025 Team eSJEC Racing, St. Joseph Engineering College, Mangalore. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Load data first, then the main script -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
