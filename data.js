@@ -60,7 +60,7 @@ const SITE_DATA = {
           hod: "Lakshith",
           image: "Lakshith.jpg",
           members: [
-            { name: "Yashraj Shetty", image: "" },
+            { name: "Yashraj Shetty", image: "Yashraj.jpeg" },
             { name: "Bhavin D S", image: "bhavin d s.jpg" },
             { name: "Ashwin", image: "Ashwin.jpg" },
           ],
@@ -71,7 +71,7 @@ const SITE_DATA = {
           image: "Prateek Moras.png",
           members: [
             { name: "Anson Rodrigues", image: "Anson.png" },
-            { name: "Faustina Fernandes", image: "FMF.JPG" },
+            { name: "Faustina Fernandes", image: "Faustina M F.jpg" },
             { name: "Ashton", image: "Ashton Calvin Pinto.png" },
             { name: "Issac Rodrigues", image: "Isaac Rodrigues.jpg" },
             { name: "Jessel", image: "Jessel Crasta.jpg" },
@@ -116,32 +116,35 @@ const SITE_DATA = {
      {
       name: "Beetle 7.0",
       year: "2025-26",
-      captain: { name: "Dayal",image: "ramyashree.png" },
+      captain: { name: "Dayal",image: "Dayal.jpeg" },
       viceCaptain: { name: "Prateek Moras",image: "Prateek Moras.png" },
       subsystems: [
         {
           name: "Rollcage",
           hod: "Selvin Fernandes",
+          image:"Selvin.jpeg",
           members: [
             { name: "Lakshith", image: "Lakshith.jpg" },
-            { name: "Yashraj Shetty", image: "Yashraj Shetty.jpg" },
+            { name: "Yashraj Shetty", image: "Yashraj.jpeg" },
           ],
         },
         {
           name: "Suspension & Steering",
           hod: "Briden Springfield",
+          image:"Briden.jpeg",
           members: [
             { name: "Anupam Pradeep", image: "Anupam Pradeep.jpg" },
-            { name: "Christina Fernandes", image: "Christina Fernandes.jpg" },
-            { name: "Pranav R", image: "Pranav R.jpg" },
+            { name: "Christina Fernandes", image: "" },
+            { name: "Pranav R", image: "Pranav.jpg" },
             { name: "Pratheek Moras", image: "Prateek Moras.png" },
             { name: "Anson Rodrigues", image: "Anson.png" },
-            { name: "Faustina Fernandes", image: "FMF.JPG" },
+            { name: "Faustina Fernandes", image: "Faustina M F.jpg" },
           ],
         },
         {
           name: "Braking",
           hod: "Denzil Pinto",
+          image: "",
           members: [
             { name: "Akash K Y", image: "Akash KY.jpg" },
           ],
@@ -149,9 +152,10 @@ const SITE_DATA = {
         {
           name: "E-Powertrain & DAQ",
           hod: "Rakesh P L",
+          image: "Rakesh P L.jpeg",
           members: [
-            { name: "Cedric Fernandes", image: "Cedric Fernandes.jpg" },
-            { name: "Nikhil Kulal", image: "Nikhil Kulal.jpg" },
+            { name: "Cedric Fernandes", image: "" },
+            { name: "Nikhil Kulal", image: "Nikhil.png" },
             { name: "Tanisha Shetty", image: "Tanisha Shetty.jpeg" },
             { name: "Yashas G", image: "Yashas G.jpg" },
             { name: "Chithara", image: "Chitthara .jpg" },
@@ -163,8 +167,9 @@ const SITE_DATA = {
         {
           name: "M-Powertrain",
           hod: "Lawrence Mithan Mathias",
+          image: "Lawrence.jpeg",
           members: [
-            { name: "Zaki Hanif", image: "Zaki Hanif.jpg" },
+            { name: "Zaki Hanif", image: "Zaki.jpeg" },
             { name: "Nishanth", image: "Nishanth.jpg" },
              ],
         },
@@ -174,14 +179,15 @@ const SITE_DATA = {
       name: "Beetle 6.0",
       year: "2024-25",
       captain: { name: "Ramyashree K T",image: "ramyashree.png" },
-      viceCaptain: { name: "Dayal",image: "Dayal.jpg" },
+      viceCaptain: { name: "Dayal",image: "Dayal.jpeg" },
       subsystems: [
         {
           name: "Rollcage",
           hod: "Kiran Pinto",
+          image:"Kiran Pinto.jpg",
           members: [
-            { name: "Vaibhava K", image: "Vaibhava K.jpg" },
-            { name: "Selvin Fernandes", image: "Selvin Fernandes.jpg" },
+            { name: "Vaibhava K", image: "" },
+            { name: "Selvin Fernandes", image: "Selvin.jpeg" },
             { name: "Lakshith", image: "Lakshith.jpg" },
             { name: "Nawal", image: "Nawal.jpg" },
           ],
@@ -189,28 +195,31 @@ const SITE_DATA = {
         {
           name: "Suspension & Steering",
           hod: "Anupam Pradeep",
+          image:"Anupam Pradeep.jpg",
           members: [
-            { name: "Briden Springfield", image: "Briden Springfield.jpg" },
-            { name: "Christina Fernandes", image: "Christina Fernandes.jpg" },
-            { name: "Pranav R", image: "Pranav R.jpg" },
+            { name: "Briden Springfield", image: "Briden.jpeg" },
+            { name: "Christina Fernandes", image: "" },
+            { name: "Pranav R", image: "Pranav .jpg" },
             { name: "Pratheek Moras", image: "Prateek Moras.png" },
           ],
         },
         {
           name: "Braking",
           hod: "Juvence Lobo",
+          image:"Juvence Lobo.jpg",
           members: [
-            { name: "Denzil Pinto", image: "Denzil Pinto.jpg" },
+            { name: "Denzil Pinto", image: "" },
           ],
         },
         {
           name: "E-Powertrain & DAQ",
           hod: "Shashank Devadiga",
+          image:"",
           members: [
-            { name: "Cedric Fernandes", image: "Cedric Fernandes.jpg" },
-            { name: "Rakesh P L", image: "Rakesh P L.jpg" },
-            { name: "Nikhil", image: "Nikhil.jpg" },
-            { name: "Christopher", image: "Christopher.jpg" },
+            { name: "Cedric Fernandes", image: "" },
+            { name: "Rakesh P L", image: "Rakesh P L.jpeg" },
+            { name: "Nikhil", image: "Nikhil.png" },
+            { name: "Christopher", image: "" },
             { name: "Tanisha Shetty", image: "Tanisha Shetty.jpeg" },
             { name: "Yashas", image: "Yashas.jpg" },
           ],
@@ -218,12 +227,13 @@ const SITE_DATA = {
         {
           name: "M-Powertrain",
           hod: "Prathik Rao",
+          image:"",
           members: [
-            { name: "Akshay P Nair", image: "Akshay P Nair.jpg" },
-            { name: "Lawrence Mithan Mathias", image: "Lawrence Mithan Mathias.jpg" },
-            { name: "Zaki Hanif", image: "Zaki Hanif.jpg" },
-            { name: "Nidhish", image: "Nidhish.jpg" },
-            { name: "Rakshith", image: "Rakshith.jpg" },
+            { name: "Akshay P Nair", image: "" },
+            { name: "Lawrence Mithan Mathias", image: "Lawrence.jpeg" },
+            { name: "Zaki Hanif", image: "Zaki.jpeg" },
+            { name: "Nidhish", image: "" },
+            { name: "Rakshith", image: "rakshith.jpg" },
              ],
         },
       ],
@@ -237,22 +247,22 @@ const SITE_DATA = {
         {
           name: "Rollcage",
           hod: "Vaibhava K",
-          image: "Vaibhava K.jpg",
+          image: "",
           members: [
             { name: "Kiran Pinto", image: "" },
-            { name: "Selvin Fernandes", image: "" },
+            { name: "Selvin Fernandes", image: "Selvin.jpeg" },
             { name: "Rimesha Dsilva", image: "" },
           ],
         },
         {
           name: "Suspension & Steering",
           hod: "Muhammad Mukthar",
-          image: "Muhammad Mukthar.jpg",
+          image: "",
           members: [
             { name: "Mohammed Sahal", image: "" },
             { name: "Merlyn Gudinho", image: "" },
             { name: "Mohammed Humail", image: "" },
-            { name: "Briden Springfield", image: "" },
+            { name: "Briden Springfield", image: "Briden.jpeg" },
             { name: "Christina Fernandes", image: "" },
             { name: "Anupam Pradeep", image: "Anupam Pradeep.jpg" },
           ],
@@ -260,29 +270,29 @@ const SITE_DATA = {
         {
           name: "Braking",
           hod: "Juvence Lobo",
-          image: "Juvence Lobo.jpg",
+          image: "",
           members: [],
         },
         {
           name: "E-Powertrain & DAQ",
           hod: "Shashank Devadiga",
-          image: "Shashank Devadiga.jpg",
+          image: "",
           members: [
-            { name: "Cedric Fernandes", image: "Cedric Fernandes.jpg" },
-            { name: "Rakesh P L", image: "Rakesh P L.jpg" },
-            { name: "Dayal", image: "Dayal.jpg" },
+            { name: "Cedric Fernandes", image: "" },
+            { name: "Rakesh P L", image: "Rakesh P L.jpeg" },
+            { name: "Dayal", image: "Dayal.jpeg" },
             { name: "Ramyashree K T", image: "Ramyashree K T.jpg" },
           ],
         },
         {
           name: "M-Powertrain & DAQ",
           hod: "Prathik Rao",
-          image: "Prathik Rao.jpg",
+          image: "",
           members: [
             { name: "Akshay Nair", image: "" },
             { name: "Natasha Correia", image: "" },
-            { name: "Zaki Hanif", image: "" },
-            { name: "Lawrence Mithan Mathias", image: "" },
+            { name: "Zaki Hanif", image: "Zaki.jpeg" },
+            { name: "Lawrence Mithan Mathias", image: "Lawrence.jpeg" },
           ],
         },
       ],
@@ -296,7 +306,7 @@ const SITE_DATA = {
         {
           name: "Rollcage",
           hod: "Russel Dsouza",
-          image: "Russel Dsouza.jpg",
+          image: "",
           members: [
             { name: "Kiran Pinto", image: "" },
             { name: "Abrar M H", image: "" },
@@ -307,7 +317,7 @@ const SITE_DATA = {
         {
           name: "Suspension & Steering",
           hod: "Clifford Noronha",
-          image: "Clifford Noronha.jpg",
+          image: "",
           members: [
             { name: "Ken Noronha", image: "" },
             { name: "Mohammed Sahal", image: "" },
@@ -320,7 +330,7 @@ const SITE_DATA = {
         {
           name: "Braking",
           hod: "Natraj S",
-          image: "Natraj S.jpg",
+          image: "",
           members: [
             { name: "Juvence Lobo", image: "" },
             { name: "Supritha Kotegar", image: "" },
@@ -329,7 +339,7 @@ const SITE_DATA = {
         {
           name: "E-Powertrain & DAQ",
           hod: "Shravan M",
-          image: "Shravan M.jpg",
+          image: "",
           members: [
             { name: "Deepansh Arekere", image: "" },
             { name: "Shashank Devadiga", image: "" },
@@ -343,7 +353,7 @@ const SITE_DATA = {
         {
           name: "M-Powertrain & DAQ",
           hod: "Neril Dsouza",
-          image: "Neril Dsouza.jpg",
+          image: "",
           members: [
             { name: "Akshay Nair", image: "" },
             { name: "Natasha Correia", image: "" },
@@ -362,7 +372,7 @@ const SITE_DATA = {
         {
           name: "Rollcage",
           hod: "Nihal",
-          image: "Nihal.jpg",
+          image: "",
           members: [
             { name: "Ale Rasool", image: "" },
             { name: "Abrar M H", image: "" },
@@ -375,7 +385,7 @@ const SITE_DATA = {
         {
           name: "Suspension & Steering",
           hod: "Supreeth P Amin",
-          image: "Supreeth P Amin.jpg",
+          image: "",
           members: [
             { name: "Ken Noronha", image: "" },
             { name: "Mohammed Sahal", image: "" },
@@ -390,7 +400,7 @@ const SITE_DATA = {
         {
           name: "Braking",
           hod: "Nishchal Naik",
-          image: "Nishchal Naik.jpg",
+          image: "",
           members: [
             { name: "Rahul C", image: "" },
             { name: "Nataraj S", image: "" },
@@ -410,7 +420,7 @@ const SITE_DATA = {
         {
           name: "Rollcage",
           hod: "Nihal",
-          image: "Nihal.jpg",
+          image: "",
           members: [
             { name: "Hitesh Shetty", image: "" },
             { name: "Vishal Moterio", image: "" },
@@ -421,7 +431,7 @@ const SITE_DATA = {
         {
           name: "Suspension & Steering",
           hod: "Uttham U",
-          image: "Uttam U.jpg",
+          image: "",
           members: [
             { name: "Ken Noronha", image: "" },
             { name: "Desmond", image: "" },
@@ -434,7 +444,7 @@ const SITE_DATA = {
         {
           name: "Braking",
           hod: "Floyd Saldanha",
-          image: "Floyd Saldanha.jpg",
+          image: "",
           members: [
             { name: "Nischal Naik", image: "" },
             { name: "Puneeth Suvarna", image: "" },
@@ -457,7 +467,7 @@ const SITE_DATA = {
         {
           name: "Rollcage",
           hod: "Yvon Fernandes",
-          image: "Yvon Fernandes.jpg",
+          image: "",
           members: [
             { name: "Nihal", image: "" },
             { name: "Melroy Fernandes", image: "" },
@@ -467,7 +477,7 @@ const SITE_DATA = {
         {
           name: "Suspension & Steering",
           hod: "Aloysius Dsilva",
-          image: "Aloysius Dsilva.jpg",
+          image: "",
           members: [
             { name: "Supreeth P Amin", image: "" },
             { name: "Desmond Dsouza", image: "" },
@@ -482,7 +492,7 @@ const SITE_DATA = {
         {
           name: "Braking",
           hod: "AShton Lobo",
-          image: "AShton Lobo.jpg",
+          image: "",
           members: [
             { name: "Nischal Naik", image: "" },
             { name: "Rakesh", image: "" },
@@ -493,7 +503,7 @@ const SITE_DATA = {
         {
           name: "E-Powertrain & DAQ",
           hod: "Vikyath R",
-          image: "Vikyath R.jpg",
+          image: "",
         }
       ]
     },
