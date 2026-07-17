@@ -186,6 +186,7 @@ const SITE_DATA = {
           hod: "Kiran Pinto",
           image:"",
           members: [
+
             { name: "Vaibhava K", image: "" },
             { name: "Selvin Fernandes", image: "Selvin.jpeg" },
             { name: "Lakshith", image: "Lakshith.jpg" },
@@ -219,7 +220,7 @@ const SITE_DATA = {
             { name: "Cedric Fernandes", image: "" },
             { name: "Rakesh P L", image: "Rakesh P L.jpeg" },
             { name: "Nikhil", image: "Nikhil.png" },
-            { name: "Christopher", image: "" },
+            { name: "Christopher", image: "christopher.jpg" },
             { name: "Tanisha Shetty", image: "Tanisha Shetty.jpeg" },
             { name: "Yashas", image: "Yashas G.jpg" },
           ],
@@ -232,7 +233,7 @@ const SITE_DATA = {
             { name: "Akshay P Nair", image: "" },
             { name: "Lawrence Mithan Mathias", image: "Lawrence.jpeg" },
             { name: "Zaki Hanif", image: "Zaki.jpeg" },
-            { name: "Nidhish", image: "" },
+            { name: "Nidhish", image: "Nidhish Bhaskar.png" },
             { name: "Rakshith", image: "rakshith.jpg" },
              ],
         },
@@ -343,8 +344,8 @@ const SITE_DATA = {
           members: [
             { name: "Deepansh Arekere", image: "" },
             { name: "Shashank Devadiga", image: "" },
-            { name: "Ramyashree K T", image: "" },
-            { name: "Dayal", image: "" },
+            { name: "Ramyashree K T", image: "ramyashree.png" },
+            { name: "Dayal", image: "Dayal.jpeg" },
             { name: "Preetham Dsouza", image: "" },
             { name: "Nikhil Vernon", image: "" },
             { name: "Abhishek V", image: "" },
