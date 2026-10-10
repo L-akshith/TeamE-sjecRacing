@@ -71,7 +71,7 @@ const SITE_DATA = {
           image: "Prateek Moras.png",
           members: [
             { name: "Anson Rodrigues", image: "Anson.png" },
-            { name: "Faustina Fernandis", image: "Faustina M F.jpg" },
+            { name: "Faustina Fernandis", image: "Faustina M Fernandis.jpg" },
             { name: "Ashton", image: "Ashton Calvin Pinto.png" },
             { name: "Issac Rodrigues", image: "Isaac Rodrigues.jpg" },
             { name: "Jessel", image: "Jessel Crasta.jpg" },
@@ -138,7 +138,7 @@ const SITE_DATA = {
             { name: "Pratheek Moras", image: "Prateek Moras.png" },
             { name: "Christina Fernandes", image: "Christina.jpeg" },
             { name: "Anson Rodrigues", image: "Anson.png" },
-            { name: "Faustina Fernandis", image: "Faustina M F.jpg" },
+            { name: "Faustina Fernandis", image: "Faustina M Fernandis.jpg" },
             {name :"Norman Dsouza", image:"Norman.jpeg"},
           ],
         },
