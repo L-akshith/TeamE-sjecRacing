@@ -107,9 +107,7 @@ const SITE_DATA = {
           name: "M-Powertrain",
           hod: "Nishanth",
           image: "Nishanth.jpg",
-          members: [
-            { name: "Jeevan", image: "Jeevan V S.jpg" },
-             ],
+          members: [],
         },
       ],
     },

@@ -642,114 +642,77 @@ function initTiltEffect() {
     });
   });
 
-  /* ===== HERO ATV 360° TURNTABLE ===== */
-  const atvWrapper = document.getElementById('atv3dWrapper');
-  const buggyFrame = document.getElementById('buggyFrame');
-
-  if (!atvWrapper || !buggyFrame) return;
-
-  let currentAngleY = 0;   // current Y rotation in degrees
-  let velocityY     = 0;   // spin momentum after drag release
-  let isDragging    = false;
-  let lastX         = 0;
-  let autoSpinRAF   = null;
-  let dragRAF       = null;
-
-  // Stop CSS auto-spin and take over with JS
-  function takeControl() {
-    buggyFrame.classList.add('dragging');
-    // Compute current rotation from the CSS animation so we start from correct angle
-    const style = window.getComputedStyle(buggyFrame);
-    const matrix = new DOMMatrixReadOnly(style.transform);
-    // Extract Y rotation from matrix
-    currentAngleY = Math.round(Math.atan2(matrix.m13, matrix.m33) * (180 / Math.PI));
-    cancelAnimationFrame(autoSpinRAF);
-    cancelAnimationFrame(dragRAF);
-  }
-
-  // Smooth momentum loop after drag ends
-  function momentumLoop() {
-    velocityY *= 0.95;   // friction
-    currentAngleY += velocityY;
-    buggyFrame.style.transform = `rotateY(${currentAngleY}deg)`;
-
-    if (Math.abs(velocityY) > 0.2) {
-      dragRAF = requestAnimationFrame(momentumLoop);
-    } else {
-      // Resume CSS auto-spin from current position
-      buggyFrame.classList.remove('dragging');
-      buggyFrame.style.transform = '';
-    }
-  }
-
-  /* ---- Mouse events ---- */
-  atvWrapper.addEventListener('mousedown', (e) => {
-    takeControl();
-    isDragging = true;
-    lastX = e.clientX;
-    velocityY = 0;
-    e.preventDefault();
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    const dx = e.clientX - lastX;
-    velocityY  = dx * 0.8;          // speed sensitivity
-    currentAngleY += velocityY;
-    buggyFrame.style.transform = `rotateY(${currentAngleY}deg)`;
-    lastX = e.clientX;
-  });
-
-  window.addEventListener('mouseup', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    dragRAF = requestAnimationFrame(momentumLoop);
-  });
-
-  /* ---- Touch events ---- */
-  atvWrapper.addEventListener('touchstart', (e) => {
-    takeControl();
-    isDragging = true;
-    lastX = e.touches[0].clientX;
-    velocityY = 0;
-    e.preventDefault();
-  }, { passive: false });
-
-  window.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const dx = e.touches[0].clientX - lastX;
-    velocityY  = dx * 0.8;
-    currentAngleY += velocityY;
-    buggyFrame.style.transform = `rotateY(${currentAngleY}deg)`;
-    lastX = e.touches[0].clientX;
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    dragRAF = requestAnimationFrame(momentumLoop);
-  });
 }
 
+/* ===== HERO ATV — 360° CSS SPIN ===== */
+function initATV3DViewer() {
+  const scene = document.getElementById('atv3dScene');
+  const img   = document.getElementById('atvImg');
+  if (!scene || !img) return;
 
+  let rotY = 0, rotX = 0, velY = 0;
+  let isDragging = false, lastX = 0, lastY = 0;
+  let autoSpin = true;
 
+  function applyTransform() {
+    img.style.transform = `perspective(900px) rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+  }
+
+  // Auto-spin loop
+  (function tick() {
+    if (autoSpin) {
+      rotY += 0.5;            // 0.5° per frame = smooth full rotation
+    } else if (!isDragging) {
+      velY *= 0.94;           // friction / momentum
+      rotY += velY;
+      if (Math.abs(velY) < 0.05) autoSpin = true;
+    }
+    applyTransform();
+    requestAnimationFrame(tick);
+  })();
+
+  /* Mouse drag */
+  scene.addEventListener('mousedown', (e) => {
+    isDragging = true; autoSpin = false; velY = 0;
+    lastX = e.clientX; lastY = e.clientY;
+    e.preventDefault();
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    velY = (e.clientX - lastX) * 0.6;
+    rotY += velY;
+    rotX += (e.clientY - lastY) * 0.2;
+    rotX  = Math.max(-25, Math.min(25, rotX));
+    lastX = e.clientX; lastY = e.clientY;
+  });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+
+  /* Touch drag */
+  scene.addEventListener('touchstart', (e) => {
+    isDragging = true; autoSpin = false; velY = 0;
+    lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
+    e.preventDefault();
+  }, { passive: false });
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    velY = (e.touches[0].clientX - lastX) * 0.6;
+    rotY += velY;
+    lastX = e.touches[0].clientX;
+  }, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+}
 
 /* ===== SMOOTH REVEAL FOR HERO ===== */
 window.addEventListener('load', () => {
   const splash = document.getElementById('splashScreen');
-  
-  // Splash loading bar takes ~3.2s (1s delay + 2.2s fill), dismiss after it completes
   setTimeout(() => {
     splash.classList.add('hide');
-    
-    // After splash fades out (0.8s transition), reveal hero elements
     setTimeout(() => {
       document.querySelectorAll('.hero [data-animate]').forEach((el, i) => {
         setTimeout(() => el.classList.add('visible'), i * 200);
       });
       initTiltEffect();
-      // Remove splash from DOM
-      splash.remove();
+            splash.remove();
     }, 800);
   }, 3400);
 });
