@@ -364,7 +364,7 @@ function renderContact() {
   el.innerHTML = `
     <div class="contact-item"><span class="ci-icon">⌖</span><div><h4>Location</h4><p>${addressHTML}</p></div></div>
     <div class="contact-item"><span class="ci-icon">✉</span><div><h4>Email</h4><p>${c.email}</p></div></div>
-    <div class="contact-item"><span class="ci-icon">☎</span><div><h4>Phone</h4><p>${c.phone}</p></div></div>
+    <div class="contact-item"><span class="ci-icon">☎</span><div><h4>Phone</h4><p style="white-space: pre-line;">${c.phone}</p></div></div>
     <div class="socials">
       ${c.socials.instagram ? `<a href="${c.socials.instagram}" target="_blank" class="social-btn" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>` : ''}
       ${c.socials.twitter ? `<a href="${c.socials.twitter}" target="_blank" class="social-btn" aria-label="Twitter"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>` : ''}
