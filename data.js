@@ -638,6 +638,7 @@ const SITE_DATA = {
   contact: {
     address: "St. Joseph Engineering College\nVamanjoor, Mangalore - 575028\nKarnataka, India",
     email: "teamesjecracing@sjec.ac.in",
+    phone:"Pratheek Moras: +91 9148218235 , Lakshith: +91 7676635461",
     socials: {
       instagram: "https://www.instagram.com/team_esjec_racing/",
       twitter: "https://twitter.com/TEAMeSJECRACING",
