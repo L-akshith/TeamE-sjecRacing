@@ -46,8 +46,10 @@ services:
     container_name: backend_api
     expose:
       - "5000"
+    environment:
+      DATA_DIR: /data
     volumes:
-      - backend-data:/usr/src/app
+      - backend-data:/data
     networks:
       - app-network
 

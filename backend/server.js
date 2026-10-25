@@ -5,6 +5,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const dataPath = path.join(process.env.DATA_DIR || __dirname, 'submissions.json');
 
 app.use(cors());
 app.use(express.json());
@@ -26,7 +27,6 @@ app.post('/api/contact', (req, res) => {
   };
 
   // Save to a local JSON file in the container
-  const dataPath = path.join(__dirname, 'submissions.json');
   let submissions = [];
 
   try {
@@ -52,7 +52,6 @@ app.post('/api/contact', (req, res) => {
 
 // Endpoint to list submissions (useful for verification)
 app.get('/api/contact/submissions', (req, res) => {
-  const dataPath = path.join(__dirname, 'submissions.json');
   try {
     if (fs.existsSync(dataPath)) {
       const fileData = fs.readFileSync(dataPath, 'utf8');
