@@ -632,6 +632,7 @@ const SITE_DATA = {
     { name: "BAJA", description: "BAJA SAE India", logo: "baja-logo-2017.png" },
     { name: "SolidWorks", description: "SolidWorks", logo: "solidworks.jpg" },
     { name: "ANSYS", description: "ANSYS Inc.", logo: "ansys.png" },
+    { name: "Infinity", description: "Infinity Fastener Solutions", logo: "infinity.png" },
   ],
 
   // ===== CONTACT =====
