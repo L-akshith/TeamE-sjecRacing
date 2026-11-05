@@ -444,11 +444,11 @@ img {
 
 /* Loading bar */
 .splash-bar {
-  width: 200px;
+  width: 200px;          /* try 300px for a longer track */
   height: 3px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
-  overflow: hidden;
+  position: relative;    /* NEW */
   opacity: 0;
   animation: splashTextIn 0.5s ease forwards 0.9s;
 }
@@ -458,7 +458,7 @@ img {
   width: 0%;
   background: linear-gradient(90deg, var(--green), #33ff88);
   border-radius: 3px;
-  animation: splashBarFill 2.2s ease-in-out forwards 1s;
+  animation: splashBarFill 1.4s ease-in-out forwards 1s;
   box-shadow: 0 0 10px var(--green-glow);
 }
 
@@ -466,6 +466,28 @@ img {
   to { width: 100% }
 }
 
+/* Beetle that crawls along the bar */
+.splash-beetle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 40px;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(90deg);
+  filter: drop-shadow(0 0 6px rgba(0, 255, 102, 0.6));
+  animation:
+    splashBeetleCrawl 1.4s ease-in-out forwards 1s,
+    splashBeetleWobble .15s ease-in-out infinite alternate;
+}
+
+@keyframes splashBeetleCrawl {
+  to { left: 100%; }
+}
+
+@keyframes splashBeetleWobble {
+  from { transform: translate(-50%, -50%) rotate(86deg); }
+  to   { transform: translate(-50%, -50%) rotate(94deg); }
+}
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
